@@ -1,10 +1,8 @@
 import React from 'react';
-import TodoList from './TodoList';
 
-const Title = props => 
+const Title = props =>
     <div>
-        <h1>{props.Title}</h1>
-        <TodoList />
+        <h1>{props.title}</h1>
     </div>
-    
+
 export default Title;
