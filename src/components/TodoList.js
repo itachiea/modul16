@@ -1,13 +1,20 @@
 import React from 'react';
 
-const TodoList = (props) =>
-    <div>
-        <button onClick={() => props.removeTodo(props.todo.id)}>{props.data[0].text}</button>
-        <div onClick = {() => props.removeTodo()}>{props.data[0].text}</div>
-        {props.data[1].text}
-        {props.data[2].text}
-    </div>
+const Todo = (props) => (
+    <li>
+        {props.todo.text} 
+        <button onClick={() => props.removeTodo(props.todo.id)}>X</button>
+    </li>
+);
 
+const TodoList = (props) => {
+    const todos = props.data.map(todo => <Todo todo={todo} removeTodo={props.removeTodo} key={todo.id} />);
 
+    return (
+        <div>
+            {todos}
+        </div>
+    )
+}
 
 export default TodoList;

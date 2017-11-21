@@ -19,6 +19,8 @@ class App extends React.Component {
                 }],
             title: 'mleko'
         };
+
+        this.removeTodo = this.removeTodo.bind(this);
     }
     addTodo(val){
         const todo = {
@@ -29,6 +31,7 @@ class App extends React.Component {
         this.setState({data});
     }
     removeTodo(id) {
+        console.log(id);
         const remainder = this.state.data.filter(todo => todo.id !== id);
         this.setState({data: remainder});
     }
@@ -36,8 +39,9 @@ class App extends React.Component {
         return (
             <div className={style.TodoApp}>
                 Tutaj pojawią się komponenty naszej aplikacji.
-                <Title title = {this.state.title} />
-                <TodoList data = {this.state.data}/>
+                <Title title={this.state.title} /> 
+                ({this.state.data.length})
+                <TodoList data={this.state.data} removeTodo={this.removeTodo} />
             </div>
         );
     }
