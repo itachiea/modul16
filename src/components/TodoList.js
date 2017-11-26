@@ -9,7 +9,7 @@ const Todo = (props) => (
 
 const TodoList = (props) => {
     const todos = props.data.map(todo => <Todo todo={todo} removeTodo={props.removeTodo} key={todo.id} />);
-
+    
     return (
         <div>
             {todos}
