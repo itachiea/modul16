@@ -25,7 +25,7 @@ class App extends React.Component {
         this.removeTodo = this.removeTodo.bind(this);
         this.addTodo = this.addTodo.bind(this);
     }
-    addTodo(val){
+    addTodo(val){        
         const todo = {
             text: val,
             id: uuid.v4(),
