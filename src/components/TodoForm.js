@@ -3,7 +3,7 @@ import React from 'react';
 const TodoForm = (props) => (
         <form action="#">
             <input type="text" id="yes" name="test" />
-            <button type="submit" onClick={(e) => props.addTodo(document.getElementById('yes').value)}>dodaj nowy item</button>
+            <button type="submit" onClick={(e) => props.addTodo(e, document.getElementById('yes').value)}>dodaj nowy item</button>
         </form>
     )
 
